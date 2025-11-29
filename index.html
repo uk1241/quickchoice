@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Quick Choice</title>
+  <meta name="description"
+    content="Shop for a range of high-quality products including children's lunch boxes, soap dispensers, and insulated thermoses.">
+  <meta name="keywords" content="lunch box, soap dispenser, thermos, e-commerce, Max Home">
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Global Font Change to Poppins */
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Poppins', sans-serif !important;
+    }
+
+    /* This custom CSS ensures all product cards in the row have the same height 
+    by making the .portfolio-wrap element fill the entire height of its column (col-lg-4). 
+    This applies only on desktop screens (min-width: 992px).
+    */
+    @media (min-width: 992px) {
+      .portfolio-container {
+        display: flex;
+        /* Enables flexbox layout for the entire row */
+        flex-wrap: wrap;
+      }
+
+      .portfolio-item {
+        display: flex;
+        /* Makes the column a flex container */
+      }
+
+      .portfolio-wrap {
+        height: 100%;
+        /* Forces the product card to fill the column height */
+        display: flex;
+        flex-direction: column;
+        /* Stacks image and info vertically */
+      }
+
+      .portfolio-info {
+        flex-grow: 1;
+        /* Allows the info section to take up remaining space */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* Pushes the price/button to the bottom */
+      }
+    }
+  </style>
+
+</head>
+
+<body class="index-page">
+
+  <script>
+    function sendToWhatsapp(event) {
+      event.preventDefault(); // Stop default form submission (Crucial for static redirect)
+
+      const form = document.getElementById('contact-form');
+      const name = form.querySelector('#name').value;
+      const email = form.querySelector('#email').value;
+      const subject = form.querySelector('#subject').value;
+      const message = form.querySelector('#message').value;
+
+      const whatsappNumber = '919846394657'; // Your WhatsApp number without "+"
+
+      // Constructing the pre-filled message with URL encoding
+      const text = `New Inquiry%0A%0ASubject: ${encodeURIComponent(subject)}%0AFrom: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0A%0AMessage: ${encodeURIComponent(message)}`;
+      const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+
+      // Show a temporary message (optional, can be refined with the template's validate.js)
+      document.querySelector('.sent-message').style.display = 'block';
+
+      // Redirect to WhatsApp
+      window.open(url, '_blank');
+
+      // Clear form after successful attempt
+      form.reset();
+      return false;
+    }
+  </script>
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">Quick Choice</h1>
+        <span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="https://wa.me/919846394657" target="_blank">Order Now</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section id="hero" class="hero section">
+      <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative"
+        data-aos="zoom-out">
+        <h1>Welcome to <span>Quick Choice</span></h1>
+        <p>Your destination for quality home and lifestyle products.</p>
+        <div class="d-flex">
+          <a href="#products" class="btn-get-started scrollto">Explore Products</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="portfolio section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Products</h2>
+        <p>Innovative and essential items for daily convenience.</p>
+      </div>
+
+      <div class="container">
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <a href="assets/img/luchbox.png" data-gallery="portfolio-gallery-app"
+                class="glightbox">
+                <img src="assets/img/luchbox.png" class="img-fluid"
+                  alt="Unicorn Children's Lunch Box">
+              </a>
+              <div class="portfolio-info">
+                <h4>Unicorn Children's Lunch Box</h4>
+                <p>
+                  This is a children's lunch box that is a common hybrid stainless steel/plastic bento box design. This
+                  style is very popular for school kids as it combines the safety of steel with the appealing look and
+                  convenience of plastic.
+                  Material and SMade of Food-Grade Stainless Steel.
+                  Highly durable, rust-free, easy to clean, does not retain food odors or colors, and is a safe,
+                  non-toxic material (BPA-free).
+                  Outer Shell/Lid: Made from Durable Plastic
+                  Benefit: Provides lightweight strength, allows for bright colors and fun prints (like the Unicorn
+                  design), and helps keep the overall weight down for children.
+                </p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <p class="mb-0 text-success fw-bold h5">Price: ₹ XXXX</p>
+                  <a href="https://wa.me/919846394657?text=Hello,%20I%20am%20interested%20in%20buying%20the%20Unicorn%20Children's%20Lunch%20Box.%20Please%20provide%20payment%20details."
+                    target="_blank" class="buy-now-btn btn btn-success">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-product">
+            <div class="portfolio-wrap">
+              <a href="assets/img/soapox.jpeg" data-gallery="portfolio-gallery-product" class="glightbox">
+                <img src="assets/img/soapox.jpeg" class="img-fluid" alt="2-in-1 Soap Pump Dispenser and Sponge Caddy">
+              </a>
+              <div class="portfolio-info">
+                <h4>2-in-1 Soap Pump Dispenser & Caddy</h4>
+                <p>
+                  2-in-1 Soap Pump Dispenser and Sponge Caddy, which is a specialized kitchen accessory designed to
+                  streamline the dishwashing process.
+                  This product is an innovative, space-saving sink organizer that combines a liquid dish soap dispenser
+                  with a designated sponge holder (caddy).
+                  One-Handed Dispensing: It features a press-type pump mechanism on top. You simply press the top plate
+                  or the sponge directly onto the pump to dispense a measured amount of liquid soap directly onto the
+                  sponge or scrubber.
+                  The integrated caddy keeps the wet sponge or scrubber off the countertop, which helps keep the sink
+                  area dry, clean, and organized.
+                  The design is engineered to reduce soap waste by delivering a precise amount with each pump, making
+                  dishwashing faster and more efficient.
+                </p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <p class="mb-0 text-success fw-bold h5">Price: ₹ YYYY</p>
+                  <a href="https://wa.me/919846394657?text=Hello,%20I%20am%20interested%20in%20buying%20the%202-in-1%20Soap%20Pump%20Dispenser%20and%20Sponge%20Caddy.%20Please%20provide%20payment%20details."
+                    target="_blank" class="buy-now-btn btn btn-success">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-branding">
+            <div class="portfolio-wrap">
+              <a href="assets/img/flaskNew-removebg-preview.png" data-gallery="portfolio-gallery-branding"
+                class="glightbox">
+                <img src="assets/img/flaskNew-removebg-preview.png" class="img-fluid"
+                  alt="Max Home Insulated Thermos">
+              </a>
+              <div class="portfolio-info">
+                <h4>Max Home Insulated Thermos</h4>
+                <p>
+                  This is a stylish and compact metal flask, packaged in its original box.
+                  Key Features and Details:
+                  Color: The main flask is a deep, matte Bottle Green color.
+                  Capacity: The product details state the capacity is 480 ml.
+                  Lid/Cap: The flask has a contoured, secure-looking lid in the same matte green, featuring a
+                  contrasting light brown/tan colored accent near the opening mechanism (likely a flip-top or
+                  push-button). The lid structure suggests it is designed for easy drinking.
+                </p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <p class="mb-0 text-success fw-bold h5">Price: ₹ ZZZZ</p>
+                  <a href="https://wa.me/919846394657?text=Hello,%20I%20am%20interested%20in%20buying%20the%20Max%20Home%20Insulated%20Thermos.%20Please%20provide%20payment%20details."
+                    target="_blank" class="buy-now-btn btn btn-success">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <a href="assets/img/speedDuckwaterbottle-removebg-preview.png" data-gallery="portfolio-gallery-web" class="glightbox">
+                <img src="assets/img/speedDuckwaterbottle-removebg-preview.png" class="img-fluid" alt="SpeedDuck Children's Water Bottle">
+              </a>
+              <div class="portfolio-info">
+                <h4>SpeedDuck Children's Insulated Sports Bottle</h4>
+                <p>
+                  This is a SpeedDuck-branded children's water bottle with a "StarFace" design, featuring bright colours
+                  and a functional sports cap.
+                  Children's Insulated Sports Bottle (270ml)
+                  This is a durable, 270ml capacity children's bottle constructed from double-walled, vacuum-insulated
+                  stainless steel. It features a secure, leak-proof cap with a push-button release and an integrated
+                  straw or sipper nozzle for easy, one-handed use, ideal for school or sports.
+                  The stainless steel construction is BPA-free and ensures liquids remain cold for hours, encouraging
+                  children to stay hydrated with fresh, cool water throughout the day. Its compact size and fun
+                  "StarFace" design make it perfect for small hands and appeal to young users.
+                </p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <p class="mb-0 text-success fw-bold h5">Price: ₹ AAAA</p>
+                  <a href="https://wa.me/919846394657?text=Hello,%20I%20am%20interested%20in%20buying%20the%20SpeedDuck%20Children's%20Insulated%20Sports%20Bottle.%20Please%20provide%20payment%20details."
+                    target="_blank" class="buy-now-btn btn btn-success">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <a href="assets/img/Multi-Functional Vegetable Washer & Drainer.png" data-gallery="portfolio-gallery-card" class="glightbox">
+                <img src="assets/img/Multi-Functional Vegetable Washer & Drainer.png" class="img-fluid" alt="Vegetable Washer and Drainer">
+              </a>
+              <div class="portfolio-info">
+                <h4>Multi-Functional Vegetable Washer & Drainer</h4>
+                <p>
+                  standard kitchen colander, strainer, or washing basket, often used for washing and draining
+                  vegetables, fruits, rice, and pasta.typical features for a vegetable washing and draining tool of this
+                  type:
+                  Features of a Vegetable Wash and Drainer
+                  2-in-1 or Multi-Functional Design,
+                  Washing Bowl and Strainer/Colander: The most common design is a bowl-within-a-bowl or a bowl paired
+                  with a separate strainer. This allows you to soak vegetables in the outer bowl and then lift or rotate
+                  the inner strainer to drain the water quickly without pouring the contents into the sink.
+                  Washing, Rinsing, and Serving: Designed to handle all three tasks, minimizing the number of dishes
+                  used.
+                  Efficient Drainage
+                  Perforated Sides/Bottom: The strainer component has holes or slots designed for quick and efficient
+                  water drainage.
+                </p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <p class="mb-0 text-success fw-bold h5">Price: ₹ BBBB</p>
+                  <a href="https://wa.me/919846394657?text=Hello,%20I%20am%20interested%20in%20buying%20the%20Multi-Functional%20Vegetable%20Washer%20&%20Drainer.%20Please%20provide%20payment%20details."
+                    target="_blank" class="buy-now-btn btn btn-success">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+    <section id="contact" class="contact section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact Us</h2>
+        <p>Send us a message directly via WhatsApp for quick inquiries.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5 gx-lg-5">
+
+          <div class="col-lg-6 mx-auto">
+            <form id="contact-form" action="" method="post" role="form" class="php-email-form"
+              onsubmit="return sendToWhatsapp(event);">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" id="message" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Sending...</div>
+                <div class="error-message" style="display:none;"></div>
+                <div class="sent-message" style="display:none; color: green;">Redirecting to WhatsApp with your
+                  message...</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message via WhatsApp</button></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Quick Choice</span>
+          </a>
+          <p>Contact us via WhatsApp for quick service and inquiries.</p>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>WhatsApp Support:</p>
+          <p><strong><a href="https://wa.me/919846394657" target="_blank">+91 98463 94657</a></strong></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center">
+      <p>© <span>Copyright</span><strong class="px-1 sitename">Quick Choice</strong><span>All Rights Reserved</span></p>
+      <div class="credits">
+        Made with  ❤️  by FlashIT
+      </div>
+    </div>
+
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
