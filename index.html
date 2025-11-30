@@ -9,8 +9,8 @@
     content="Shop for a range of high-quality products including children's lunch boxes, soap dispensers, and insulated thermoses.">
   <meta name="keywords" content="lunch box, soap dispenser, thermos, e-commerce, Max Home">
 
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
+  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
 
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -38,39 +38,68 @@
       font-family: 'Poppins', sans-serif !important;
     }
 
-    /* This custom CSS ensures all product cards in the row have the same height 
-    by making the .portfolio-wrap element fill the entire height of its column (col-lg-4). 
-    This applies only on desktop screens (min-width: 992px).
-    */
-    @media (min-width: 992px) {
-      .portfolio-container {
-        display: flex;
-        /* Enables flexbox layout for the entire row */
-        flex-wrap: wrap;
-      }
-
-      .portfolio-item {
-        display: flex;
-        /* Makes the column a flex container */
-      }
-
-      .portfolio-wrap {
-        height: 100%;
-        /* Forces the product card to fill the column height */
-        display: flex;
-        flex-direction: column;
-        /* Stacks image and info vertically */
-      }
-
-      .portfolio-info {
-        flex-grow: 1;
-        /* Allows the info section to take up remaining space */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        /* Pushes the price/button to the bottom */
-      }
+    /* Custom CSS for product card layout */
+    .portfolio-item {
+      /* Ensures two cards per row on mobile (col-6) and three on medium screens (col-md-4) */
+      padding: 5px; 
     }
+    
+    .portfolio-wrap {
+        /* Ensures the card content fits nicely */
+        padding: 0;
+    }
+
+    /* === NEW STYLES FOR 100x100 IMAGE === */
+    .image-wrapper {
+        width: 100px;
+        height: 100px;
+        margin: 10px auto; /* Center the image wrapper */
+        overflow: hidden; /* Hide parts of the image that exceed the box */
+        display: flex; /* Use flex to center the image itself */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-wrapper img {
+        width: 100%; /* Ensure the image fills the width of the 100px container */
+        height: auto;
+        max-width: none; /* Override img-fluid's max-width if necessary */
+        max-height: 100%; /* Ensure image fits height */
+        object-fit: contain; /* Scales the image to fit without cropping, preserving aspect ratio */
+    }
+    /* ==================================== */
+
+    .portfolio-info h4 {
+        /* Makes product titles look clickable */
+        cursor: pointer;
+        color: #007bff; /* Bootstrap primary color for links */
+        transition: color 0.3s;
+        font-size: 1rem; /* Adjust font size for smaller mobile cards */
+        text-align: center; /* Center the title below the centered image */
+    }
+
+    .portfolio-info h4:hover {
+        color: #0056b3;
+    }
+
+    .portfolio-info {
+        text-align: center; /* Center content in the info block */
+    }
+
+    .portfolio-info .d-flex {
+        justify-content: center !important; /* Center price and button */
+        flex-direction: column; /* Stack price and button vertically on small screens */
+        align-items: center !important;
+    }
+
+    .portfolio-info .buy-now-btn {
+        margin-top: 5px; /* Add space between price and button */
+    }
+
+    .portfolio-info .h5 {
+        font-size: 0.9rem !important; /* Smaller price text for compact view */
+    }
+
   </style>
 
 </head>
@@ -150,145 +179,139 @@
       <div class="container">
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="col-6 col-md-4 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <a href="assets/img/luchbox.png" data-gallery="portfolio-gallery-app"
-                class="glightbox">
-                <img src="assets/img/luchbox.png" class="img-fluid"
-                  alt="Unicorn Children's Lunch Box">
+              <!-- <a href="details-unicorn.html"> -->
+                <div class="image-wrapper">
+                  <img src="assets/img/luchbox.png" class="img-fluid" alt="Unicorn Children's Lunch Box">
+                </div>
               </a>
               <div class="portfolio-info">
-                <h4>Unicorn Children's Lunch Box</h4>
-                <p>
-                  This is a children's lunch box that is a common hybrid stainless steel/plastic bento box design. This
-                  style is very popular for school kids as it combines the safety of steel with the appealing look and
-                  convenience of plastic.
-                  Material and SMade of Food-Grade Stainless Steel.
-                  Highly durable, rust-free, easy to clean, does not retain food odors or colors, and is a safe,
-                  non-toxic material (BPA-free).
-                  Outer Shell/Lid: Made from Durable Plastic
-                  Benefit: Provides lightweight strength, allows for bright colors and fun prints (like the Unicorn
-                  design), and helps keep the overall weight down for children.
-                </p>
+                <!-- <a href="details-unicorn.html"> -->
+                  <h4>Unicorn Children's Lunch Box</h4>
+                </a>
                 <div class="d-flex justify-content-between align-items-center mt-3">
-                  <p class="mb-0 text-success fw-bold h5">Price: ₹ XXXX</p>
+                  <p class="mb-0 text-success fw-bold h5">Price: ₹499</p>
                   <a href="https://wa.me/919846394657?text=Hello,%20I%20am%20interested%20in%20buying%20the%20Unicorn%20Children's%20Lunch%20Box.%20Please%20provide%20payment%20details."
                     target="_blank" class="buy-now-btn btn btn-success">Buy Now</a>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-product">
+          </div><div class="col-6 col-md-4 portfolio-item filter-product">
             <div class="portfolio-wrap">
-              <a href="assets/img/soapox.jpeg" data-gallery="portfolio-gallery-product" class="glightbox">
-                <img src="assets/img/soapox.jpeg" class="img-fluid" alt="2-in-1 Soap Pump Dispenser and Sponge Caddy">
+              <!-- <a href="details-soap-caddy.html"> -->
+                <div class="image-wrapper">
+                  <img src="assets/img/soapox.jpeg" class="img-fluid" alt="2-in-1 Soap Pump Dispenser and Sponge Caddy">
+                </div>
               </a>
               <div class="portfolio-info">
-                <h4>2-in-1 Soap Pump Dispenser & Caddy</h4>
-                <p>
-                  2-in-1 Soap Pump Dispenser and Sponge Caddy, which is a specialized kitchen accessory designed to
-                  streamline the dishwashing process.
-                  This product is an innovative, space-saving sink organizer that combines a liquid dish soap dispenser
-                  with a designated sponge holder (caddy).
-                  One-Handed Dispensing: It features a press-type pump mechanism on top. You simply press the top plate
-                  or the sponge directly onto the pump to dispense a measured amount of liquid soap directly onto the
-                  sponge or scrubber.
-                  The integrated caddy keeps the wet sponge or scrubber off the countertop, which helps keep the sink
-                  area dry, clean, and organized.
-                  The design is engineered to reduce soap waste by delivering a precise amount with each pump, making
-                  dishwashing faster and more efficient.
-                </p>
+                <!-- <a href="details-soap-caddy.html"> -->
+                  <h4>2-in-1 Soap Pump Dispenser & Caddy</h4>
+                </a>
                 <div class="d-flex justify-content-between align-items-center mt-3">
-                  <p class="mb-0 text-success fw-bold h5">Price: ₹ YYYY</p>
+                  <p class="mb-0 text-success fw-bold h5">Price: ₹129</p>
                   <a href="https://wa.me/919846394657?text=Hello,%20I%20am%20interested%20in%20buying%20the%202-in-1%20Soap%20Pump%20Dispenser%20and%20Sponge%20Caddy.%20Please%20provide%20payment%20details."
                     target="_blank" class="buy-now-btn btn btn-success">Buy Now</a>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-branding">
+          </div><div class="col-6 col-md-4 portfolio-item filter-branding">
             <div class="portfolio-wrap">
-              <a href="assets/img/flaskNew-removebg-preview.png" data-gallery="portfolio-gallery-branding"
-                class="glightbox">
-                <img src="assets/img/flaskNew-removebg-preview.png" class="img-fluid"
-                  alt="Max Home Insulated Thermos">
+              <!-- <a href="details-thermos.html"> -->
+                <div class="image-wrapper">
+                  <img src="assets/img/flaskNew-removebg-preview.png" class="img-fluid"
+                    alt="Max Home Insulated Thermos">
+                </div>
               </a>
               <div class="portfolio-info">
-                <h4>Max Home Insulated Thermos</h4>
-                <p>
-                  This is a stylish and compact metal flask, packaged in its original box.
-                  Key Features and Details:
-                  Color: The main flask is a deep, matte Bottle Green color.
-                  Capacity: The product details state the capacity is 480 ml.
-                  Lid/Cap: The flask has a contoured, secure-looking lid in the same matte green, featuring a
-                  contrasting light brown/tan colored accent near the opening mechanism (likely a flip-top or
-                  push-button). The lid structure suggests it is designed for easy drinking.
-                </p>
+                <!-- <a href="details-thermos.html"> -->
+                  <h4>Max Home Insulated Thermos</h4>
+                </a>
                 <div class="d-flex justify-content-between align-items-center mt-3">
-                  <p class="mb-0 text-success fw-bold h5">Price: ₹ ZZZZ</p>
+                  <p class="mb-0 text-success fw-bold h5">Price: ₹678</p>
                   <a href="https://wa.me/919846394657?text=Hello,%20I%20am%20interested%20in%20buying%20the%20Max%20Home%20Insulated%20Thermos.%20Please%20provide%20payment%20details."
                     target="_blank" class="buy-now-btn btn btn-success">Buy Now</a>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          </div><div class="col-6 col-md-4 portfolio-item filter-web">
             <div class="portfolio-wrap">
-              <a href="assets/img/speedDuckwaterbottle-removebg-preview.png" data-gallery="portfolio-gallery-web" class="glightbox">
-                <img src="assets/img/speedDuckwaterbottle-removebg-preview.png" class="img-fluid" alt="SpeedDuck Children's Water Bottle">
+              <!-- <a href="details-speedduck.html"> -->
+                <div class="image-wrapper">
+                  <img src="assets/img/speedDuckwaterbottle-removebg-preview.png" class="img-fluid"
+                    alt="SpeedDuck Children's Water Bottle">
+                </div>
               </a>
               <div class="portfolio-info">
-                <h4>SpeedDuck Children's Insulated Sports Bottle</h4>
-                <p>
-                  This is a SpeedDuck-branded children's water bottle with a "StarFace" design, featuring bright colours
-                  and a functional sports cap.
-                  Children's Insulated Sports Bottle (270ml)
-                  This is a durable, 270ml capacity children's bottle constructed from double-walled, vacuum-insulated
-                  stainless steel. It features a secure, leak-proof cap with a push-button release and an integrated
-                  straw or sipper nozzle for easy, one-handed use, ideal for school or sports.
-                  The stainless steel construction is BPA-free and ensures liquids remain cold for hours, encouraging
-                  children to stay hydrated with fresh, cool water throughout the day. Its compact size and fun
-                  "StarFace" design make it perfect for small hands and appeal to young users.
-                </p>
+                <!-- <a href="details-speedduck.html"> -->
+                  <h4>SpeedDuck Children's Insulated Sports Bottle</h4>
+                </a>
                 <div class="d-flex justify-content-between align-items-center mt-3">
-                  <p class="mb-0 text-success fw-bold h5">Price: ₹ AAAA</p>
+                  <p class="mb-0 text-success fw-bold h5">Price: ₹399</p>
                   <a href="https://wa.me/919846394657?text=Hello,%20I%20am%20interested%20in%20buying%20the%20SpeedDuck%20Children's%20Insulated%20Sports%20Bottle.%20Please%20provide%20payment%20details."
                     target="_blank" class="buy-now-btn btn btn-success">Buy Now</a>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          </div><div class="col-6 col-md-4 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <a href="assets/img/Multi-Functional Vegetable Washer & Drainer.png" data-gallery="portfolio-gallery-card" class="glightbox">
-                <img src="assets/img/Multi-Functional Vegetable Washer & Drainer.png" class="img-fluid" alt="Vegetable Washer and Drainer">
+              <!-- <a href="details-veg-drainer.html"> -->
+                <div class="image-wrapper">
+                  <img src="assets/img/Multi-Functional Vegetable Washer & Drainer.png" class="img-fluid"
+                    alt="Vegetable Washer and Drainer">
+                </div>
               </a>
               <div class="portfolio-info">
-                <h4>Multi-Functional Vegetable Washer & Drainer</h4>
-                <p>
-                  standard kitchen colander, strainer, or washing basket, often used for washing and draining
-                  vegetables, fruits, rice, and pasta.typical features for a vegetable washing and draining tool of this
-                  type:
-                  Features of a Vegetable Wash and Drainer
-                  2-in-1 or Multi-Functional Design,
-                  Washing Bowl and Strainer/Colander: The most common design is a bowl-within-a-bowl or a bowl paired
-                  with a separate strainer. This allows you to soak vegetables in the outer bowl and then lift or rotate
-                  the inner strainer to drain the water quickly without pouring the contents into the sink.
-                  Washing, Rinsing, and Serving: Designed to handle all three tasks, minimizing the number of dishes
-                  used.
-                  Efficient Drainage
-                  Perforated Sides/Bottom: The strainer component has holes or slots designed for quick and efficient
-                  water drainage.
-                </p>
+                <!-- <a href="details-veg-drainer.html"> -->
+                  <h4>Multi-Functional Vegetable Washer & Drainer</h4>
+                </a>
                 <div class="d-flex justify-content-between align-items-center mt-3">
-                  <p class="mb-0 text-success fw-bold h5">Price: ₹ BBBB</p>
+                  <p class="mb-0 text-success fw-bold h5">Price: ₹322</p>
                   <a href="https://wa.me/919846394657?text=Hello,%20I%20am%20interested%20in%20buying%20the%20Multi-Functional%20Vegetable%20Washer%20&%20Drainer.%20Please%20provide%20payment%20details."
                     target="_blank" class="buy-now-btn btn btn-success">Buy Now</a>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </div><div class="col-6 col-md-4 portfolio-item filter-new-1">
+            <div class="portfolio-wrap">
+              <!-- <a href="details-storage.html"> -->
+                <div class="image-wrapper">
+                  <img src="assets/img/stainlessStell waterbottle.png" class="img-fluid" alt="Modern Storage Containers">
+                </div>
+              </a>
+              <div class="portfolio-info">
+                <!-- <a href="details-storage.html"> -->
+                  <h4>Stainless Steel Vaccum WaterBottle</h4>
+                </a>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <p class="mb-0 text-success fw-bold h5">Price: ₹ 599</p>
+                  <a href="https://wa.me/919846394657?text=Hello,%20I%20am%20interested%20in%20buying%20the%20Stainless%20Steel%20Vaccum WaterBottle.%20Please%20provide%20payment%20details."
+                    target="_blank" class="buy-now-btn btn btn-success">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div><div class="col-6 col-md-4 portfolio-item filter-new-2">
+            <div class="portfolio-wrap">
+              <!-- <a href="details-knife-set.html"> -->
+                <div class="image-wrapper">
+                  <img src="assets/img/kichenUtility.jpg" class="img-fluid" alt="Premium Kitchen Knife Set">
+                </div>
+              </a>
+              <div class="portfolio-info">
+                <!-- <a href="details-knife-set.html"> -->
+                  <h4>Food Shredder Set</h4>
+                </a>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <p class="mb-0 text-success fw-bold h5">Price: ₹759</p>
+                  <a href="https://wa.me/919846394657?text=Hello,%20I%20am%20interested%20in%20buying%20the%20Food %20Shredder%20Set%20.%20Please%20provide%20payment%20details."
+                    target="_blank" class="buy-now-btn btn btn-success">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div><div class="col-6 col-md-4 portfolio-item filter-new-3">
+              </a>
+            </div>
+          </div></div>
       </div>
 
 
@@ -368,7 +391,7 @@
     <div class="container copyright text-center">
       <p>© <span>Copyright</span><strong class="px-1 sitename">Quick Choice</strong><span>All Rights Reserved</span></p>
       <div class="credits">
-        Made with  ❤️  by FlashIT
+        Made with ❤️ by FlashIT
       </div>
     </div>
 
